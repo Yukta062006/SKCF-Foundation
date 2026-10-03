@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: 'Fraunces', serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  body {
+    @apply font-sans text-[#3A4656] bg-cream antialiased;
+    line-height: 1.65;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-[#1B2A41];
+  }
+
+  /* Custom scrollbar for smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  /* Focus styles */
+  *:focus-visible {
+    outline: 3px solid #0B5563;
+    outline-offset: 2px;
+  }
+
+  *:focus-visible:not(:hover) {
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5);
+  }
+
+  .dark *:focus-visible {
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-[1200px] mx-auto px-5 sm:px-8;
+  }
+}
